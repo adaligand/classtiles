@@ -1,0 +1,162 @@
+.grid-bg {
+  background-size: 20px 20px;
+  background-image: radial-gradient(circle, #cbd5e1 1px, transparent 1px);
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body.dragging-active {
+  cursor: grabbing !important;
+  user-select: none !important;
+}
+
+.student-card,
+.desk-slot {
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#drag-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 99999;
+}
+
+.drag-ghost {
+  position: fixed;
+  width: 240px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0.95;
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.25);
+}
+
+#seating-canvas {
+  position: relative;
+  overflow: hidden;
+}
+
+#room-stage {
+  position: absolute;
+  transform-origin: center center;
+}
+
+.room-desk {
+  position: absolute;
+  width: 112px;
+  height: 80px;
+}
+
+.drop-highlight {
+  border-color: #6366f1 !important;
+  background: #eef2ff !important;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.18);
+}
+
+.bench-drop-highlight {
+  background: #eef2ff !important;
+  border-color: #818cf8 !important;
+}
+
+.drag-source-hidden {
+  opacity: 0.25 !important;
+}
+
+.zoom-control {
+  min-width: 70px;
+  text-align: center;
+}
+
+#seating-canvas:fullscreen {
+  background-color: #f8fafc;
+  padding: 1rem;
+  width: 100vw;
+  height: 100vh;
+  border: none;
+  border-radius: 0;
+}
+
+.access-warning {
+  background-color: #fee2e2;
+  border: 1px solid #ef4444;
+  color: #991b1b;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.brand-title {
+  margin: 12px 0 2px 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.brand-subtitle {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #64748b;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 16px;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #334155;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.google-btn:hover {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+}
+
+/* Class card dragging visual styles */
+.class-card-draggable {
+  cursor: grab;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.class-card-draggable:active {
+  cursor: grabbing;
+}
+
+.class-card-dragging {
+  opacity: 0.4 !important;
+  transform: scale(0.96);
+  border-style: dashed !important;
+  border-color: #6366f1 !important;
+}
+
+.class-card-drop-target {
+  border-color: #4f46e5 !important;
+  background-color: #eef2ff !important;
+  box-shadow: 0 0 0 2px #6366f1 !important;
+}
